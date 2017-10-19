@@ -67,13 +67,14 @@ def trad(text):
 Ex. 4
 '''
 
-def isPrime(n):
+def divs(n):
+    l=[]
     for i in range(2,n):
         if (n%i == 0):
-            return False
-    return True
+            l+=str(i)    
+    return l
 
-def isPrime2(n):
+def divs2(n):
     for i in range(2,int(n**0.5)+1):
         if (n%i == 0):
             return False
