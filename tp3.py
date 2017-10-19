@@ -1,7 +1,7 @@
 
 '''
 Ex. 1
-
+'''
 l=[2,3,5]
 L=[1,3,5,7]
  
@@ -19,11 +19,11 @@ def isArithmetic (L):
             return False
 
     return (True, n)
-'''
+
 
 '''
 Ex. 2
-
+'''
 
 from random import randrange as rr
 
@@ -41,11 +41,11 @@ def is6():
         i = lancer()
         print (i)
     return True
-'''
+
 
 '''
 Ex. 3
-
+'''
 
 a="aeiouyâêîôûàéèioù"
 
@@ -61,7 +61,7 @@ def trad(text):
         if (isConsonne(L[n]) and isVoyelle(L[n+1])):
             L[n]+="av"
     return ''.join(L)
-'''
+
 
 '''
 Ex. 4
