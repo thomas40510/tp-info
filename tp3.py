@@ -82,4 +82,3 @@ def isPrime2(n):
 def Verif(n):
     for i in range(n+1):
         print((i,isPrime(i),isPrime2(i)))
-           
