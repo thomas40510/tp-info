@@ -55,7 +55,7 @@ for n in range(0,a+1):
 
 '''
 #Ex. 5
-  
+
 yr = int(input('Entrez une année : '))
 
 if ((yr%400) == 0 or ((yr%4) == 0 and (yr%100) != 0)):
@@ -107,7 +107,3 @@ for i in range (1,a+1):
             else:
                 print (cp, end='')
         print()
-
-
-                
-
