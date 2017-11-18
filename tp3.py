@@ -4,7 +4,7 @@ Ex. 1
 '''
 l=[2,3,5]
 L=[1,3,5,7]
- 
+
 def estCroissant(L):
     for i in range(0, len(L)-1):
         if L[i]>L[i+1]:
@@ -71,15 +71,12 @@ def divs(n):
     l=[]
     for i in range(2,n):
         if (n%i == 0):
-            l+=str(i)    
+            l+=[i]
     return l
 
 def divs2(n):
+    l=[]
     for i in range(2,int(n**0.5)+1):
         if (n%i == 0):
-            return False
-    return True
-
-def Verif(n):
-    for i in range(n+1):
-        print((i,isPrime(i),isPrime2(i)))
+            l+=[i]
+    return l
