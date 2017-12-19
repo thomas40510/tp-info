@@ -89,7 +89,7 @@ while True:
         break
     else : print('le nombre saisi n\'est pas compris entre 0 et 10 !')
 
-cp = input('Entrez un prmeier caractère : ')
+cp = input('Entrez un premier caractère : ')
 ci = input('Entrez un second caractère : ')
 
 for i in range (1,a+1):
