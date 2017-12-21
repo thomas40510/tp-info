@@ -21,7 +21,7 @@ for line in file :
         break
     else:
         a+=1
-        
+
 print(line,end="")
 file.close()
 '''
@@ -34,7 +34,7 @@ for line in file:
     print(line, end="")
     if ("ORIGIN" in line):
         break
-        
+
 
 file.close()
 '''
@@ -93,4 +93,3 @@ def isLetter(string):
     return (newString)
 isLetter(fileText)
 print(isLetter(fileText).count("gattaca"))
-
