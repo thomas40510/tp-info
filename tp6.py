@@ -3,7 +3,6 @@ from matplotlib import pyplot as plt
 '''
 Ex. 1
 
-
 c = np.linspace(-10, 10, 21)
 x = np.linspace(-2,2,1000)
 
@@ -35,7 +34,7 @@ for i in range(0,1000):
 
 plt.plot(x,y)
 plt.show()
-'''  
+'''
 '''
 Ex. 3
 '''
@@ -50,7 +49,7 @@ moty=basey
 plt.ylim(-8,12)
 
 def translate(motx):
-    for i in range(1,15):
+    for i in range(0,15):
         motx = basex+5*i
         plt.plot(motx,moty, color="blue")
 
