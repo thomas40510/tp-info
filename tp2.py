@@ -1,48 +1,49 @@
-##'''
-###Ex. 1
-##'''
-##def table (n,p):
-##    for i in range(0,p+1):
-##        print(n,"X",i, " = ", n*i)
+'''
+Ex. 1
+'''
+def table (n,p):
+    for i in range(0,p+1):
+        print(n,"X",i, " = ", n*i)
 
-##'''
-###Ex. 2
-##'''
-##def conversion(h, m, s):
-##    h = h*3600
-##    m = m*60
-##    s = s+m+h
-##    return s
-##
-##def hms(s):
-##    h = 0
-##    m = 0
-##    while (s>=3600):
-##        s = s-3600
-##        h+=1
-##    while (s>=60):
-##        s = s-60
-##        m+=1
-##
-##    return h, m, s
-##
-##def duree(h1,m1,s1,h2,m2,s2):
-##    return hms(conversion(h2,m2,s2)-conversion(h1,m1,s1))
+'''
+Ex. 2
+'''
+def conversion(h, m, s):
+    h = h*3600
+    m = m*60
+    s = s+m+h
+    return s
 
-##'''
-##Ex. 3
-##'''
-##def f(n):
-##    if (n%2==0):
-##        return int(n/2)
-##    else :
-##        return 3*n+1
-##
-##def syracuse(n):
-##    print (n, end= " ")
-##    while (n!=1):
-##        n = f(n)
-##        print (n, end= " ")
+def hms(s):
+    h = 0
+    m = 0
+    while (s>=3600):
+        s = s-3600
+        h+=1
+    while (s>=60):
+        s = s-60
+        m+=1
+
+    return h, m, s
+
+def duree(h1,m1,s1,h2,m2,s2):
+    return hms(conversion(h2,m2,s2)-conversion(h1,m1,s1))
+
+
+'''
+Ex. 3
+'''
+def f(n):
+    if (n%2==0):
+        return int(n/2)
+    else :
+        return 3*n+1
+
+def syracuse(n):
+    print (n, end= " ")
+    while (n!=1):
+        n = f(n)
+        print (n, end= " ")
 
 '''
 Ex. 4

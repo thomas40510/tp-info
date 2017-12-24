@@ -33,5 +33,5 @@ plt.grid()
 labels=['A','B']
 for label, xpt,ypt in zip(labels,x,y):
     plt.text(xpt+0.1,ypt+0.1,label)
-fig.savefig('fig.png')
+#fig.savefig('fig.png')
 plt.show()
