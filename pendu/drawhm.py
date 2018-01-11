@@ -47,7 +47,3 @@ def drawhm(n):
             print ("|        / \\  ")
             print ("|              ")
             print ("|              ")
-
-for i in range(7):
-    drawhm(i)
-    print(i)
