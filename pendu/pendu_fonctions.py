@@ -1,4 +1,5 @@
 from random import choice
+from firebase import firebase
 
 def choisir_mot(nom_fichier):
     mFile = open(nom_fichier, "r")
@@ -8,7 +9,7 @@ def choisir_mot(nom_fichier):
     return word.strip("\n")
 
 def mot_etoiles(mot, letters):
-    sWord = ""
+    sWord = "\n"
     for c in mot:
         if c in letters:
             sWord+=(c)
@@ -25,7 +26,7 @@ def entrer_lettre():
         exit()
     else :
         return c
-    
+
 def mot_trouve(mot, letters):
     if ("*" in mot_etoiles(mot,letters)):
         return False
@@ -37,14 +38,17 @@ def gameEnd(lettre, gagne, mot, score):
         state="interrompue par l'utilisateur"
     elif (gagne):
         state="gagnée"
-        extraMsg = "Il vous restait ",score," essais."
+        extraMsg = ("Il vous restait ", score, " essais.")
     else :
         state="perdue"
         extraMsg = "Le mot était "+"\'"+mot+"\'."
-        
+
     print("La partie est ",state)
     print(extraMsg)
 
 def askNG():
-    return(input("Voulez-vous rejouer ? Y/N ")==("Y"))
-        
+    choice = input("Voulez-vous rejouer ? (Y/N)")
+    if (choice.upper() not in ("Y","N")):
+        print("Je n'ai pas bien compris... Merci de répéter")
+        askNG()
+    return (choice.upper()=="Y")
