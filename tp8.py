@@ -68,10 +68,7 @@ for i in range(0,12):
         b.append(t)
         v.append(v[i])
         n=1
-    
+
 plt.plot(a,u)
 plt.plot(b,v)
 plt.show()
-
-
-
