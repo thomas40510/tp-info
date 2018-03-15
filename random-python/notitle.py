@@ -1,4 +1,5 @@
 import random as rd
+import numpy as np
 
 alpha='azertyuiopqsdfghjklmwxcvbn'
 
@@ -10,13 +11,13 @@ def shakespeare(n):
         l.append(alpha[c])
     return(t.join(l))
     #return (l.count(t))
-
-a = 0
-while a==0:
-    s = shakespeare(100000)
-    print(s)
-    a = s.count("hamlet")
-print(a)
+def search():
+    a = 0
+    while a==0:
+        s = shakespeare(100000)
+        print(s)
+        a = s.count("hamlet")
+    print(a)
 #print(shakespeare(1000000).count("hello"))
 
 def pgcd():
@@ -30,4 +31,4 @@ def pgcd():
             p = i
     return p
 
-print('pgcd =',pgcd())
+#print('pgcd =',pgcd())
