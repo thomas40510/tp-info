@@ -1,5 +1,7 @@
 import random as rd
 import numpy as np
+import time
+import sys
 
 alpha='azertyuiopqsdfghjklmwxcvbn'
 
@@ -11,12 +13,15 @@ def shakespeare(n):
         l.append(alpha[c])
     return(t.join(l))
     #return (l.count(t))
-def search():
+def search(word):
     a = 0
+    i=0
     while a==0:
-        s = shakespeare(100000)
+        s = shakespeare(10000)
         print(s)
-        a = s.count("hamlet")
+        a = s.count(word)
+        i+=1
+    print(i*10000)
     print(a)
 #print(shakespeare(1000000).count("hello"))
 
@@ -30,5 +35,7 @@ def pgcd():
         if a%i==0 and b%i==0:
             p = i
     return p
+
+search("hamlet")
 
 #print('pgcd =',pgcd())
