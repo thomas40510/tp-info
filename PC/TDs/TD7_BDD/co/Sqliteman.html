@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>R&eacute;visions sur les requ&ecirc;tes SQL - Logiciel simple de gestion de bases de donn&eacute;es</title>
+  <meta charset="UTF-8">
+  <meta name="author" content>
+  <meta name="keywords" content>
+  <meta name="date" content>
+  <link rel="stylesheet" type="text/css" href="../wdgt/scCodeMgr/scCodeMgr.css">
+  <link rel="stylesheet" type="text/css" href="../wdgt/scImgMgr/scImgMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {};
+/*1*/ scServices["scLoad"] = {loadFromRoot:function(pUrl){window.location.href="../"+pUrl;}, getPathFromRoot:function(pPath){return "../"+pPath;}, getUrlFromRoot:function(pHref){if(!this.fRootOffset) this.fRootOffset = scCoLib.hrefBase().length-17; return pHref.substring(this.fRootOffset);},getRootUrl:function(){if(!this.fRootUrl) this.fRootUrl = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().length-18); return this.fRootUrl;}};
+</script>
+  <!--[if lt IE 9]><script type="text/JavaScript" src="../wdgt/html5shiv/html5shiv.js"></script><![endif]--><script type="text/JavaScript" src="../lib-sm/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../svc/scorm.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../svc/scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../wdgt/tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/dynSizes/dynSizes.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{var vCurrDir = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().lastIndexOf("/")+1); if(window.opener && window.opener.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.opener.scServices) scServices = window.opener.scServices; else if(window.parent && window.parent.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.parent.scServices) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/chi:span.capTi"});
+
+</script>
+  <meta name="generator" content="SCENARI 4.1.11 / Opale 3.5.016 - http://scenari-platform.org/opale">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="revision" content="2018-02-16 10:14">
+  <link rel="start" href="BDD_SQL_web.html" title="R&eacute;visions sur les requ&ecirc;tes SQL">
+  <script type="text/javascript">try{
+	if(window.frameElement.setSubWindowTitle) window.frameElement.setSubWindowTitle(document.title);
+}catch(e){}
+</script>
+  <script type="text/javascript"> scSiLib.getContentHeight = function(pContainer) {
+ var vCh = pContainer.lastChild;
+ var vH = 0;
+ while(vCh && ( vCh.nodeType != 1 || ! (vH = vCh.offsetHeight) || vCh.style.position=="absolute") ) vCh = vCh.previousSibling;
+ if(vCh) {
+  return vCh.offsetTop + vH;
+ }
+ return Number.NaN;
+}</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/html.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/struct_ref.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/buttons.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/transf.css" media="all">
+  <!--[if IE]><link type="text/css" rel="stylesheet" href="../skin/css/ie.css" media="screen"/><![endif]-->
+  <!--[if lt IE 7]><link type="text/css" rel="stylesheet" href="../skin/css/ie6_ref.css" media="screen"/><![endif]--><link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+ </head>
+ <body>
+  <div id="tplFra"><div id="tplCo"><div id="refCo" class="scroller"><a id="content" class="accessAnc" name="content" href="#content"></a><div id="tplCoMarginW"><div id="tplCoFlexTop"></div><div id="tplCo2"><div class="mainContent "><h1 class="mainContent_ti"><span>Logiciel simple de gestion de bases de donn&eacute;es</span></h1><div class="mainContent_co "><div class="info "><h2 class="info_ti"><span>Logiciel</span></h2><div class="info_co "><div><p class="op_txt_p"><strong class="op_txt_is_emp">Sqliteman</strong> est un logiciel open source et gratuit qui permet de g&eacute;rer des bases de donn&eacute;es et de tester des requ&ecirc;tes <strong class="op_txt_is_emp">SQL</strong>.</p></div><div><p class="op_txt_p">Le fichier ci-dessous permet d'installer ce logiciel.</p></div><p class="lnkDoc"><a class="sfile_zip_lnk_lnk sfile_lnk " target="_self" href="../res/Sqliteman-1_2_2-win32.zip"><span>Fichier &agrave; d&eacute;compresser, puis lancer l'application sqliteman</span></a></p></div></div><div class="info "><h2 class="info_ti"><span>Prise en main</span></h2><div class="info_co "><div><p class="op_txt_p">Ouvrir le r&eacute;pertoire <code class="op_txt_is_code">Ressources Pedagogiques\Informatique pour tous\Eleves</code>, et copier le r&eacute;pertoire <code class="op_txt_is_code">sqliteman</code> dans son r&eacute;pertoire <code class="op_txt_is_code">Mes documents</code>. Ouvrir ensuite <strong class="op_txt_is_emp">la copie</strong> du r&eacute;pertoire et ex&eacute;cuter le fichier <code class="op_txt_is_code">sqliteman.exe</code> pour d&eacute;marrer le logiciel.</p></div><div><p class="op_txt_p">Cr&eacute;er une nouvelle base de donn&eacute;es (menu Fichier), en la sauvegardant dans un sous-r&eacute;pertoire de son r&eacute;pertoire <code class="op_txt_is_code">Mes documents</code>.</p></div><div><p class="op_txt_p">Cr&eacute;er ses tables. Il est possible d'utiliser l'interface graphique avec les menus d&eacute;roulants (clic droit) sur l'arborescence de gauche, ou d'&eacute;crire directement les requ&ecirc;tes <strong class="op_txt_is_emp">SQL</strong> dans la fen&ecirc;tre de droite. Un clic sur la fl&egrave;che verte dans la barre de menu ex&eacute;cutera les requ&ecirc;tes.</p></div></div></div><div class="info "><div class="info_co "><div><p class="op_txt_p">On peut faire un clic droit sur <code class="op_txt_is_code">Tables</code> dans l'arborescence de la fen&ecirc;tre de droite et choisir <code class="op_txt_is_code">Cr&eacute;er une Table</code>, ou taper une requ&ecirc;te sur le mod&egrave;le ci-dessous dans la fen&ecirc;tre en haut &agrave; droite.</p></div><div class="listingBk "><div><div class="code"><div class="code-form "><div class="CodeMirror-static cm-s-default" data-lang="text/x-sql"><div class="CodeMirror-code"><div class="CodeMirror-line"><div class="CodeMirror-linenumber">1</div><pre><span class="cm-keyword">CREATE</span> <span class="cm-keyword">TABLE</span> <span class="cm-string">&quot;Livres&quot;</span> (</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">2</div><pre>    <span class="cm-string">&quot;id&quot;</span> <span class="cm-builtin">INTEGER</span> PRIMARY KEY AUTOINCREMENT,</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">3</div><pre>    <span class="cm-string">&quot;titre&quot;</span> <span class="cm-builtin">TEXT</span>,</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">4</div><pre>    <span class="cm-string">&quot;auteur&quot;</span> <span class="cm-builtin">TEXT</span>,</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">5</div><pre>    <span class="cm-string">&quot;valeur&quot;</span> <span class="cm-builtin">REAL</span>,</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">6</div><pre>    <span class="cm-string">&quot;commentaire&quot;</span> <span class="cm-builtin">TEXT</span></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">7</div><pre>)</pre></div></div></div></div><pre class="code-raw noIndex " style="display:none;">CREATE TABLE &quot;Livres&quot; (
+    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT,
+    &quot;titre&quot; TEXT,
+    &quot;auteur&quot; TEXT,
+    &quot;valeur&quot; REAL,
+    &quot;commentaire&quot; TEXT
+)</pre></div></div></div><div><p class="op_txt_p">Ensuite, il faut cr&eacute;er les diff&eacute;rents enregistrements. Pour cela, il faut double-cliquer sur la table cr&eacute;&eacute;e. La fen&ecirc;tre centrale de droite devient active, et il est possible de cr&eacute;er son premier enregistrement en cliquant sur le premier ic&ocirc;ne de la barre de cette fen&ecirc;tre.</p></div><div><figure role="group" class="resInFlow "><div class="resInFlow_co "><img src="../res/Barre_menu_enregistrement.png" width="539" height="72" alt></div><figcaption class="resInFlow_ti "><span class="capTi">Barre menu de la fen&ecirc;tre d'enregistrement</span></figcaption></figure></div><div><p class="op_txt_p">Ne pas renseigner la premi&egrave;re colonne qui doit s'auto incr&eacute;menter.</p></div><div><p class="op_txt_p">Attention, tant que vous n'avez pas valid&eacute; votre travail avec le quatri&egrave;me ic&ocirc;ne de la barre de menu pr&eacute;c&eacute;dente, vos enregistrements ne sont pas ins&eacute;r&eacute;s dans votre base de donn&eacute;es. C'est le principe d'une architecture client - serveur.</p></div></div></div></div></div></div></div></div></div><div id="tplFooter"><hr class="hidden"><a id="footer" class="accessAnc" name="footer" href="#footer"></a><a href="#" onclick="window.print();return false;" class="printSubWinBtn" title="Imprimer la page"><span><img alt="Imprimer" src="../skin/img/btn/printSubWin.png" onmouseover="this.src='../skin/img/btn/printSubWinOver.png';" onmouseout="this.src='../skin/img/btn/printSubWin.png';" class="btnImg"><span class="btnLbl">Imprimer</span></span></a></div></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scImgMgr.init();new scSiRuleAutoMarginW("tplCoMarginW","ide:tplCo",true,450,100);new scSiRuleFlexH("tplCoFlexTop","ide:tplCo",true,.3);</script>
+ </body>
+</html>
