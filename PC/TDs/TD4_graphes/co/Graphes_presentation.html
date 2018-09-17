@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>Piles, files et Graphes - Pr&eacute;sentation succincte des graphes</title>
+  <meta charset="UTF-8">
+  <meta name="author" content>
+  <meta name="keywords" content>
+  <meta name="date" content>
+  <link rel="stylesheet" type="text/css" href="../wdgt/scCodeMgr/scCodeMgr.css">
+  <link rel="stylesheet" type="text/css" href="../wdgt/scImgMgr/scImgMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {};
+/*1*/ scServices["scLoad"] = {loadFromRoot:function(pUrl){window.location.href="../"+pUrl;}, getPathFromRoot:function(pPath){return "../"+pPath;}, getUrlFromRoot:function(pHref){if(!this.fRootOffset) this.fRootOffset = scCoLib.hrefBase().length-28; return pHref.substring(this.fRootOffset);},getRootUrl:function(){if(!this.fRootUrl) this.fRootUrl = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().length-29); return this.fRootUrl;}};
+</script>
+  <!--[if lt IE 9]><script type="text/JavaScript" src="../wdgt/html5shiv/html5shiv.js"></script><![endif]--><script type="text/JavaScript" src="../lib-sm/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../svc/scorm.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scMapMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scDragMgr.js"></script>
+  <script type="text/JavaScript" src="../lib-sma/scAssmntMgr.js"></script>
+  <script type="text/JavaScript" src="../svc/scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../wdgt/tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/dynSizes/dynSizes.js"></script>
+  <script type="text/JavaScript" src="../wdgt/outMgr/outMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/searchMgr/searchMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{var vCurrDir = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().lastIndexOf("/")+1); if(window.opener && window.opener.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.opener.scServices) scServices = window.opener.scServices; else if(window.parent && window.parent.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.parent.scServices) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/chi:span.capTi"});
+
+</script>
+  <meta name="generator" content="SCENARI 4.1.11 / Opale 3.5.016 - http://scenari-platform.org/opale">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="revision" content="2017-12-04 11:55">
+  <link rel="start" href="TD4_graphes_web.html" title="Piles, files et Graphes">
+  <script type="text/JavaScript">
+outMgr.declareOutline("module_TD4_graphes.txt");
+	</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/html.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/struct_page.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/buttons.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/mnu_page.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/mnu_child.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/transf.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/indexes.css">
+  <link type="text/css" rel="stylesheet" href="../skin/css/assmnt.css">
+  <link type="text/css" rel="stylesheet" href="../skin/css/assmnt_train.css">
+  <link type="text/css" rel="stylesheet" href="../skin/css/sub_windows.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/search.css" media="screen">
+  <!--[if IE]><link type="text/css" rel="stylesheet" href="../skin/css/ie.css" media="screen"/><![endif]-->
+  <!--[if lt IE 7]><link type="text/css" rel="stylesheet" href="../skin/css/ie6_page.css" media="screen"/><link type="text/css" rel="stylesheet" href="../skin/css/ie6_sub_windows.css" media="all"/><![endif]--><link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+ </head>
+ <body>
+  <div id="tplFra"><div id="tplTop"><ul id="accessibility"><li class="tplWaiContent"><a class="waiBtn contentWaiBtn" href="#content" title="aller au contenu"><span>contenu</span></a></li><li class="tplWaiMenu"><a class="waiBtn menuWaiBtn" href="#menu" title="aller au menu"><span>menu</span></a></li><li class="tplWaiNav"><a class="waiBtn navWaiBtn" href="#navigation" title="aller &agrave; la navigation"><span>navigation</span></a></li><li class="tplWaiFoot"><a class="waiBtn footWaiBtn" href="#footer" title="aller au pied de page"><span>pied de page</span></a></li></ul><noscript>Attention, votre navigateur ne supporte pas le javascript ou celui-ci a &eacute;t&eacute; d&eacute;sactiv&eacute;. Certaines fonctionnalit&eacute;s de ce module sont restreintes.</noscript><h1 id="titleRoot"><span>Piles, files et Graphes</span></h1></div><div id="tplLft"><hr class="hidden"><a id="tools" class="accessAnc" name="tools" href="#tools"></a><strong class="hidden">Mode&nbsp;: </strong><ul class="mnuMode"><li><span class="playBtnSel"><img alt="Cours" src="../skin/img/btn/playSel.png" class="btnImg"><span class="btnLbl">Cours</span></span></li></ul></div><div id="tplMain" class="tplMainMnu_open"><div id="tplMnu"><hr class="hidden"><a id="menu" class="accessAnc" name="menu" href="#menu"></a><strong class="hidden">Menu&nbsp;: </strong><div class="mnuBlock"></div><div class="mnuFra"><ul class="mnu mnu_static  mnu_sch_no"><li class="mnu_sel_no mnu_l mnu_dpt_0 mnu_obj"><div class="mnuLbl mnu_sel_no mnu_l mnu_dpt_0 mnu_obj mnu_sch_no" id="module_TD4_graphes.html"><a href="module_TD4_graphes.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Objectifs</span></span></a></div></li><li class="mnu_sel_no mnu_b mnu_dpt_0 mnu_courseUa"><div class="mnuLbl mnu_sel_no mnu_b mnu_b_c mnu_dpt_0 mnu_courseUa mnu_sch_no" id="Piles_files.html"><a href="Piles_files.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Manipulation de piles et de files</span></span></a></div></li><li class="mnu_sel_no mnu_b mnu_dpt_0 mnu_courseUa"><div class="mnuLbl mnu_sel_no mnu_b mnu_dpt_0 mnu_courseUa mnu_sch_no" id="Algo_graphes.html"><a href="Algo_graphes.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Bases de l'algorithme des graphes</span></span></a></div><ul class="mnu_sub mnu_sub_o"><li class="mnu_sel_no mnu_l mnu_dpt_1 mnu_intro"><div class="mnuLbl mnu_sel_no mnu_l mnu_dpt_1 mnu_intro mnu_sch_no" id="Algo_graphes_1.html"><a href="Algo_graphes_1.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Introduction</span></span></a></div></li><li class="mnu_sel_yes mnu_l mnu_dpt_1 mnu_expUc"><div class="mnuLbl mnu_sel_yes mnu_l mnu_dpt_1 mnu_expUc mnu_sch_no" id="Graphes_presentation.html"><span class="mnu_i"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Pr&eacute;sentation succincte des graphes</span></span></span></div></li><li class="mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc"><div class="mnuLbl mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc mnu_sch_no" id="Matrices_graphes.html"><a href="Matrices_graphes.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Exercice&nbsp;: Matrice d'adjacence d'un graphe</span></span></a></div></li><li class="mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc"><div class="mnuLbl mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc mnu_sch_no" id="Module_graphes.html"><a href="Module_graphes.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Exercice&nbsp;: Manipulation de graphes</span></span></a></div></li><li class="mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc"><div class="mnuLbl mnu_sel_no mnu_l mnu_dpt_1 mnu_practUc mnu_sch_no" id="Plus_courts_chemins.html"><a href="Plus_courts_chemins.html" target="_self" class="mnu_i mnu_lnk"><span class="mnu_sch"><span><span class="mnu_cursor"></span>Exercice&nbsp;: Algorithme de plus courts chemins</span></span></a></div></li></ul></li></ul><script type="text/javascript">scServices.totalPages = 12;</script></div><div id="tplIco"><div class="decoExpUc "></div></div></div><div id="tplCo"><div class="scroller"><hr class="hidden"><a id="content" class="accessAnc" name="content" href="#content"></a><strong class="hidden">Contenu&nbsp;: </strong><div id="tplCoMarginW" style><div id="tplCoFlexTop"></div><div class="mainContent "><h2 class="mainContent_ti"><span>Pr&eacute;sentation succincte des graphes</span></h2><div class="mainContent_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Cette section prend appui sur le cours sur les graphes de <strong class="op_txt_is_emp">Jean-Michel Rey</strong>.</p></div></div></div><div class="expUcDiv "><h3 class="expUcDiv_ti"><span>Premi&egrave;res d&eacute;finitions</span></h3><div class="expUcDiv_co "><div class="def"><h4 class="def_ti blocks_ti"><span class="def_ti_co pb_ti_co"><span class="pbTi">D&eacute;finition</span><span class="hidden"> : </span><span class="pbTiAuthor">Graphe</span></span></h4><div class="def_co blocks_co"><div><p class="op_txt_p">Un <strong class="op_txt_is_emp">graphe</strong> est un couple <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation.png" style="vertical-align:-4px;">
+	</span> o&ugrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_1.png" style="vertical-align:-0px;">
+	</span> est un ensemble fini non vide de <strong class="op_txt_is_emp">sommets</strong> (ou <strong class="op_txt_is_emp">n&oelig;uds</strong>) et <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_2.png" style="vertical-align:-0px;">
+	</span> une partie de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_3.png" style="vertical-align:-1px;">
+	</span> dont les &eacute;l&eacute;ments sont appel&eacute;s <strong class="op_txt_is_emp">ar&ecirc;tes</strong> (ou <strong class="op_txt_is_emp">arcs</strong>).</p></div></div></div><div class="info "><h4 class="info_ti"><span>Compl&eacute;ments</span></h4><div class="info_co "><div><p class="op_txt_p">Si <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_4.png" style="vertical-align:-1px;">
+	</span>, le graphe est <strong class="op_txt_is_emp">complet</strong>.</p></div><div><p class="op_txt_p">Un <strong class="op_txt_is_emp">arc</strong> est plus pr&eacute;cis&eacute;ment une paire ordonn&eacute;e de sommets, <em class="op_txt_is_spec">i.e.</em> une ar&ecirc;te orient&eacute;e : il n'y a qu'un sens de parcours pour un arc alors que pour une ar&ecirc;te on peut aller indiff&eacute;remment d'un sommet &agrave; l'autre. Dans le premier cas on parle de <strong class="op_txt_is_emp">graphe orient&eacute;</strong>, et dans le second cas de <strong class="op_txt_is_emp">graphe non orient&eacute;</strong>.</p></div><div><p class="op_txt_p">Dans les graphes que nous consid&eacute;rerons, on les supposera sans <strong class="op_txt_is_emp">boucles</strong>, c'est &agrave; dire si <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_5.png" style="vertical-align:-4px;">
+	</span> alors <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_6.png" style="vertical-align:-4px;">
+	</span> et on supposera que deux sommets sont reli&eacute;s par au plus une ar&ecirc;te (dans le cas contraire, on parle de <strong class="op_txt_is_emp">multigraphe</strong>).</p></div><div><p class="op_txt_p">Un graphe est <strong class="op_txt_is_emp">dynamique</strong> si on peut lui ajouter, supprimer ou modifier des sommets, des ar&ecirc;tes. Dans le cas contraire il est dit <strong class="op_txt_is_emp">statique</strong>.</p></div></div></div></div></div><div class="expUcDiv "><h3 class="expUcDiv_ti"><span>Autres d&eacute;finitions</span></h3><div class="expUcDiv_co "><div class="info "><h4 class="info_ti"><span>Voisins</span></h4><div class="info_co "><div><p class="op_txt_p">les <strong class="op_txt_is_emp">voisins</strong> ou <strong class="op_txt_is_emp">successeurs</strong> d'un sommet <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> sont les sommets <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> tels que l'ar&ecirc;te (l'arc) <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_9.png" style="vertical-align:-4px;">
+	</span>. On dit aussi que <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> est <strong class="op_txt_is_emp">adjacent</strong> &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span>.</p></div></div></div><div class="info "><h4 class="info_ti"><span>Degr&eacute;</span></h4><div class="info_co "><div><p class="op_txt_p">le <strong class="op_txt_is_emp">degr&eacute; sortant</strong> d'un sommet <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> est le nombre de sommets <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> qui lui sont adjacents (<em class="op_txt_is_spec">i.e.</em> <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_9.png" style="vertical-align:-4px;">
+	</span>), c'est &agrave; dire le nombre de ses successeurs. Le degr&eacute; entrant de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> est le nombre de sommets <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> auxquels <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> est adjacent (<em class="op_txt_is_spec">i.e. </em><span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_10.png" style="vertical-align:-4px;">
+	</span>).</p></div></div></div><div class="info "><div class="info_co "><div><p class="op_txt_p">On remarque que ces notions sont &eacute;quivalentes dans le cas d'un graphe non orient&eacute;.</p></div></div></div><div class="info "><h4 class="info_ti"><span>Chemin, distance</span></h4><div class="info_co "><div><p class="op_txt_p">un chemin de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> est une suite <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_11.png" style="vertical-align:-3px;">
+	</span> telle que pour tout <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_12.png" style="vertical-align:-3px;">
+	</span>, <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_13.png" style="vertical-align:-4px;">
+	</span>. <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_14.png" style="vertical-align:-0px;">
+	</span> est alors appel&eacute;e la <strong class="op_txt_is_emp">longueur du chemin</strong>.</p></div><div><p class="op_txt_p">Dans ce cas, la <strong class="op_txt_is_emp">distance</strong> entre <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> et <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> est la plus petite longueur d'un chemin de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span>.</p></div></div></div><div class="info "><h4 class="info_ti"><span>Connexit&eacute;</span></h4><div class="info_co "><div><p class="op_txt_p">le graphe est <strong class="op_txt_is_emp">fortement connexe</strong> si pour tout couple <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_15.png" style="vertical-align:-4px;">
+	</span>, <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_16.png" style="vertical-align:-2px;">
+	</span>, il existe un chemin de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span> &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> et un chemin de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_8.png" style="vertical-align:-0px;">
+	</span> &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_7.png" style="vertical-align:-0px;">
+	</span>. On parle de graphe connexe pour un graphe non orient&eacute;.</p></div><div><p class="op_txt_p">Une <strong class="op_txt_is_emp">composante fortement connexe</strong> est un sous-graphe <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_17.png" style="vertical-align:-4px;">
+	</span> fortement connexe, maximal.</p></div></div></div><div class="info "><h4 class="info_ti"><span>Pond&eacute;ration</span></h4><div class="info_co "><div><p class="op_txt_p">un graphe est <strong class="op_txt_is_emp">pond&eacute;r&eacute;</strong> s'il est muni d'une application <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_18.png" style="vertical-align:-NaNpx;">
+	</span>.</p></div></div></div></div></div><div class="expUcDiv "><h3 class="expUcDiv_ti"><span>Implantation d'un graphe</span></h3><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Il existe deux repr&eacute;sentations classiques d'un graphe <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_19.png" style="vertical-align:-4px;">
+	</span> :</p><ul class="op_txt_il"><li class="op_txt_ili"><p class="op_txt_p">par liste d'adjacence ;</p></li><li class="op_txt_ili"><p class="op_txt_p">par matrice d'adjacence.</p></li></ul><p class="op_txt_p">Dans les deux cas, les &eacute;l&eacute;ments de <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_1.png" style="vertical-align:-0px;">
+	</span> sont d&eacute;sign&eacute;s par des entiers.</p></div></div></div><div class="expUcDiv "><h4 class="expUcDiv_ti"><span>liste d'adjacence</span></h4><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">On associe &agrave; chaque sommet la liste de ses successeurs.</p></div><div><p class="op_txt_p">L'int&eacute;r&ecirc;t de cette implantation est que la place m&eacute;moire requise est lin&eacute;aire en <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_20.png" style="vertical-align:-4px;">
+	</span> (nombre d'ar&ecirc;tes), mais le principal d&eacute;faut est que l'on ne sait pas en temps constant s'il existe une ar&ecirc;te entre deux sommets <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_21.png" style="vertical-align:-0px;">
+	</span> et <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_22.png" style="vertical-align:-4px;">
+	</span>, car il faut parcourir les listes.</p></div><div><p class="op_txt_p">Cette implantation n'est pas celle retenue dans le programme d'informatique pour tous.</p></div></div></div></div></div><div class="expUcDiv "><h4 class="expUcDiv_ti"><span>matrice d'adjacence</span></h4><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">On d&eacute;finit la matrice d'adjacence <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_23.png" style="vertical-align:-5px;">
+	</span> o&ugrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_24.png" style="vertical-align:-22px;">
+	</span>.</p></div><div><p class="op_txt_p">Lorsque le graphe est non orient&eacute;, la matrice est <strong class="op_txt_is_emp">sym&eacute;trique</strong>.</p></div><div><p class="op_txt_p">L'int&eacute;r&ecirc;t principal de cette implantaion est que l'on sait en temps constant s'il existe une ar&ecirc;te entre les sommets <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_21.png" style="vertical-align:-0px;">
+	</span> et <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_22.png" style="vertical-align:-4px;">
+	</span>. Le d&eacute;faut majeur est que dans le cas d'un graphe peu dense (<span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_25.png" style="vertical-align:-3px;">
+	</span> tr&egrave;s inf&eacute;rieur &agrave; <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_26.png" style="vertical-align:-3px;">
+	</span>), la place m&eacute;moire utilis&eacute;e est toujours <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Graphes_presentation_27.png" style="vertical-align:-0px;">
+	</span>.</p></div></div></div></div></div></div></div></div></div></div><div id="tplCoSpacer"></div></div></div></div><div id="tplRgt"><hr class="hidden"><a id="navigation" class="accessAnc" name="navigation" href="#navigation"></a><strong class="hidden">Navigation&nbsp;: </strong><a href="Algo_graphes_1.html" target="_self" class="navBtn prevBtn btnPrv" title="Pr&eacute;c&eacute;dent (Introduction)"><span><img alt="Pr&eacute;c&eacute;dent" src="../skin/img/btn/prev.png" onmouseover="this.src='../skin/img/btn/prevOver.png';" onmouseout="this.src='../skin/img/btn/prev.png';" class="btnImg"><span class="btnLbl">Pr&eacute;c&eacute;dent</span></span></a><span class="hidden"> | </span><a href="Matrices_graphes.html" target="_self" class="navBtn nextBtn btnNxt" title="Suivant (Exercice&nbsp;: Matrice d'adjacence d'un graphe)"><span><img alt="Suivant" src="../skin/img/btn/next.png" onmouseover="this.src='../skin/img/btn/nextOver.png';" onmouseout="this.src='../skin/img/btn/next.png';" class="btnImg"><span class="btnLbl">Suivant</span></span></a></div><div id="tplBtm"><hr class="hidden"><a id="footer" class="accessAnc" name="footer" href="#footer"></a><span id="tplBtmLeft"><a class="homeBtn " target="_self" href="TD4_graphes_web.html" title="Accueil"><span><img alt="Accueil" src="../skin/img/btn/home.png" onmouseover="this.src='../skin/img/btn/homeOver.png';" onmouseout="this.src='../skin/img/btn/home.png';" class="btnImg"><span class="btnLbl">Accueil</span></span></a><span class="hidden"> | </span><a href="#" onclick="window.print();return false;" class="printBtn" title="Imprimer la page"><span><img alt="Imprimer" src="../skin/img/btn/print.png" onmouseover="this.src='../skin/img/btn/printOver.png';" onmouseout="this.src='../skin/img/btn/print.png';" class="btnImg"><span class="btnLbl">Imprimer</span></span></a></span><span id="tplBtmIn"><span class="hidden"> | </span><span class="hidden"> | </span><a id="linkSp" target="_blank" href="http://scenari-platform.org" title="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)"><span><img alt="R&eacute;alis&eacute; avec Scenari (nouvelle fen&ecirc;tre)" src="../skin/img/struct/scBtn.png"></span></a></span></div></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();new scSiRuleAutoMarginW("tplCoMarginW","ide:tplCo",true,510,100);new scSiRuleFlexH("tplCoFlexTop","ide:tplCo",true,.3);scCodeMgr.init();outMgr.init("ide:tplMain","ide:tplMnu","ide:tplMnu/des:ul.mnu");scImgMgr.init();</script>
+ </body>
+</html>
