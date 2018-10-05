@@ -54,9 +54,37 @@ def dans_cylindre(x,y,xc,yc,R):
     rs = pow(x-xc,2)+pow(y-yc,2)
     return (rs =< R**2)
 
+eps0,L,N,rho
+rhos_cyl,Ex_cyl,Ey_cyl,frontiere_cyl
+
 def initialise_rhos_cylindre(tab_rhos):
-    rhos = x #TODO : valeur de rho'' en fonction des autres données (partie physique)
+    rhos = rho*(L**2)*(h**2)/eps0
     for i in range(N+1):
         for j in range(N+1):
-            if (dans_cylindre(coordonnées): #TODO : trouver expression coordonnées à insérer ici
+            if (dans_cylindre(i,j,L/2,L/2,L/4):
                 tab_rhos[i,j] = rhos
+
+def initialise_frontiere_cylindre(tab_f):
+    for i in range(N+1):
+        tab_f[i,0]=True
+        tab_f[i,N]=True
+        tab_f[0,i]=True
+        tab_f[N,i]=True
+
+V0,Vp,m,e,rhos_osc,V_osc,Ex_osc,Ey_osc,frontiere_osc
+
+def initialise_frontiere_condensateur(tab_V,tab_f):
+    initialise_frontiere_cylindre(tab_f)
+    for i in range(10,50): #tube de l'oscillateur
+        tab_f[i,40] = True
+        tab_V[i,40] = -Vp
+        tab_f[i,60] = True
+        tab_V[i,60] = Vp
+
+'''
+Question 33
+'''
+v0  = pow(2*e*V0/m,0.5)
+dt = L/(200*V0)
+lx[0]= 1E-2 ; ly[0] = 5E-2
+lvx[0] = V0 ; lvy[0] = 0
