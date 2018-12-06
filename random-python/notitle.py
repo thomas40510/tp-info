@@ -36,6 +36,25 @@ def pgcd():
             p = i
     return p
 
-search("hamlet")
+def f(n):
+    a=['x']
+    for u in range(1,n+1):
+        a.append(u)
+    print(a)
+    b = a
+    for i in range(1,n+1):
+        b[0]=i
+        for y in range(1,n+1):
+            b[y]=a[y]*a[i]
+        print(b)
+
+def divs(n):
+    a = [1]
+    for i in range (2,n//2):
+        if (n%i==0):
+            a.append(i)
+    a.append(n)
+    print(a)
+
 
 #print('pgcd =',pgcd())
