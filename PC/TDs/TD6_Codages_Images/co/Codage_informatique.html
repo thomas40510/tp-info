@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta http-equiv="x-ua-compatible" content="IE=EDGE">
+  <title>TD6&nbsp;: Applications particuli&egrave;res d'alg&egrave;bre lin&eacute;aire - Codage informatique</title>
+  <meta charset="UTF-8">
+  <meta name="author" content>
+  <meta name="keywords" content>
+  <meta name="date" content>
+  <link rel="stylesheet" type="text/css" href="../wdgt/scCodeMgr/scCodeMgr.css">
+  <link rel="stylesheet" type="text/css" href="../wdgt/scImgMgr/scImgMgr.css">
+  <script type="text/JavaScript">
+/*0*/ var scServices = {};
+/*1*/ scServices["scLoad"] = {loadFromRoot:function(pUrl){window.location.href="../"+pUrl;}, getPathFromRoot:function(pPath){return "../"+pPath;}, getUrlFromRoot:function(pHref){if(!this.fRootOffset) this.fRootOffset = scCoLib.hrefBase().length-27; return pHref.substring(this.fRootOffset);},getRootUrl:function(){if(!this.fRootUrl) this.fRootUrl = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().length-28); return this.fRootUrl;}};
+</script>
+  <!--[if lt IE 9]><script type="text/JavaScript" src="../wdgt/html5shiv/html5shiv.js"></script><![endif]--><script type="text/JavaScript" src="../lib-sm/scCoLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scPaLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scSiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTiLib.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scTooltipMgr.js"></script>
+  <script type="text/JavaScript" src="../svc/scorm.js"></script>
+  <script type="text/JavaScript" src="../lib-sm/scDynUiMgr.js"></script>
+  <script type="text/JavaScript" src="../svc/scSearch/scSearch.js"></script>
+  <script type="text/JavaScript" src="../wdgt/tplMgr/tplMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/dynSizes/dynSizes.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scCodeMgr/scCodeMgr.js"></script>
+  <script type="text/JavaScript" src="../wdgt/scImgMgr/scImgMgr.js"></script>
+  <script type="text/JavaScript">
+/*0*/ try{var vCurrDir = scCoLib.hrefBase().substring(0,scCoLib.hrefBase().lastIndexOf("/")+1); if(window.opener && window.opener.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.opener.scServices) scServices = window.opener.scServices; else if(window.parent && window.parent.location.href.lastIndexOf(vCurrDir, vCurrDir.length)==0 && window.parent.scServices) scServices = window.parent.scServices;}catch(e){}
+scCodeMgr.registerCode("des:div.code");
+
+scImgMgr.registerGallery("des:div.galFra");
+
+scImgMgr.registerZoom("des:a.imgZoom",{toolbar:1,mag:1,titlePath:"par:/nsi:/chi:span.capTi"});
+
+</script>
+  <meta name="generator" content="SCENARI 4.1.11 / Opale 3.5.016 - http://scenari-platform.org/opale">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="revision" content="2019-01-21 13:51">
+  <link rel="start" href="TD6_Codages_Images_web.html" title="TD6&nbsp;: Applications particuli&egrave;res d'alg&egrave;bre lin&eacute;aire">
+  <script type="text/javascript">try{
+	if(window.frameElement.setSubWindowTitle) window.frameElement.setSubWindowTitle(document.title);
+}catch(e){}
+</script>
+  <script type="text/javascript"> scSiLib.getContentHeight = function(pContainer) {
+ var vCh = pContainer.lastChild;
+ var vH = 0;
+ while(vCh && ( vCh.nodeType != 1 || ! (vH = vCh.offsetHeight) || vCh.style.position=="absolute") ) vCh = vCh.previousSibling;
+ if(vCh) {
+  return vCh.offsetTop + vH;
+ }
+ return Number.NaN;
+}</script>
+  <link type="text/css" rel="stylesheet" href="../skin/css/html.css" media="all">
+  <link type="text/css" rel="stylesheet" href="../skin/css/struct_ref.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/buttons.css" media="screen">
+  <link type="text/css" rel="stylesheet" href="../skin/css/transf.css" media="all">
+  <!--[if IE]><link type="text/css" rel="stylesheet" href="../skin/css/ie.css" media="screen"/><![endif]-->
+  <!--[if lt IE 7]><link type="text/css" rel="stylesheet" href="../skin/css/ie6_ref.css" media="screen"/><![endif]--><link type="text/css" rel="stylesheet" href="../skin/css/print.css" media="print">
+ </head>
+ <body>
+  <div id="tplFra"><div id="tplCo"><div id="refCo" class="scroller"><a id="content" class="accessAnc" name="content" href="#content"></a><div id="tplCoMarginW"><div id="tplCoFlexTop"></div><div id="tplCo2"><div class="mainContent "><h1 class="mainContent_ti"><span>Codage informatique</span></h1><div class="mainContent_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Le codage informatique des caract&egrave;res est une <strong class="op_txt_is_emp">convention</strong> qui permet, &agrave; travers un codage connu de tous, de transmettre de l'information textuelle.</p></div></div></div><div class="expUcDiv "><h2 class="expUcDiv_ti"><span>Le codage ASCII</span></h2><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Le plus ancien code informatique est le code ASCII (American Standard Code for Information Interchange) qui d&eacute;finit un jeu de 128 caract&egrave;res num&eacute;rot&eacute;s de 0 &agrave; 127. Ce code permet donc d'&eacute;crire de l'anglais ou toute autre langue utilisant l'alphabet latin sans les caract&egrave;res accentu&eacute;s.</p></div><div><figure role="group" class="resInFlow "><div class="resInFlow_co "><img src="../res/table-code-ascii.gif" width="400" height="400" alt></div><figcaption class="resInFlow_ti "><span class="capTi">Table ASCII</span></figcaption></figure></div></div></div></div></div><div class="expUcDiv "><h2 class="expUcDiv_ti"><span>Le codage ISO 8859-n</span></h2><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Rapidement, le besoin de nouveaux caract&egrave;res se fait sentir, et des extensions du code ASCII apparaissent, comme la famille des codes ISO 8859 au nombre de 16 et d&eacute;sign&eacute;s par ISO 8859-n o&ugrave; n est un entier compris entre 1 et 16. </p><p class="op_txt_p">Par exemple, le code correspondant aux caract&egrave;res n&eacute;cessaires pour &eacute;crire le fran&ccedil;ais est le ISO 8859-1 (parfois appel&eacute; Latin-1) et ISO 8859-2 permettra d'&eacute;crire le croate.</p><p class="op_txt_p">Tous ces codes d&eacute;finissent chacun un jeu de 224 caract&egrave;res cod&eacute;s de 0 &agrave; 127 et de 160 &agrave; 255 (les codes dans l'intervalle ne sont pas utilis&eacute;s). Un seul octet est donc suffisant pour les repr&eacute;senter.</p></div></div></div></div></div><div class="expUcDiv "><h2 class="expUcDiv_ti"><span>Le standard Unicode</span></h2><div class="expUcDiv_co "><div class="info "><div class="info_co "><div><p class="op_txt_p">Le probl&egrave;me avec le codage ISO 8859-n est que deux codes diff&eacute;rents ne seront pas compatibles car les caract&egrave;res cod&eacute;s de 160 &agrave; 255 ne seront pas les m&ecirc;mes. De plus, il n'est pas possible de transcrire toutes les &eacute;critures humaines avec ce code.</p><p class="op_txt_p">C'est pourquoi Unicode a vu le jour au d&eacute;but des ann&eacute;es 1990 (premi&egrave;re publication en octobre 1991) afin de standardiser les &eacute;changes de textes dans les diff&eacute;rentes langues &agrave; un niveau mondial. La derni&egrave;re version Unicode 11.0 a &eacute;t&eacute; publi&eacute;e en juin 2018 et comporte <span class="op_txt_tl_mathtex">
+		<img class="sfile_math_inline" alt src="../res/Codage_informatique.png" style="vertical-align:-0px;">
+	</span> caract&egrave;res.</p><p class="op_txt_p">Ce standard attribue &agrave; chacun des caract&egrave;res un nom et un num&eacute;ro appel&eacute; point de code. Il est le plus souvent exprim&eacute; sous la forme U+XXXX (XXXX en base hexad&eacute;cimale).</p><p class="op_txt_p">Exemple&nbsp;: le caract&egrave;re 'A' a pour nom 'LATIN CAPITAL LETTER A' et pour code U+0041, son point de code est donc 65 en d&eacute;cimal.</p></div><div><p class="op_txt_p">Il est tr&egrave;s simple avec Python d'utiliser les caract&egrave;res Unicode. Il suffit de les &eacute;crire avec la syntaxe suivante&nbsp;:</p></div><div class="listingBk "><div><div class="code"><div class="code-form "><div class="CodeMirror-static cm-s-default" data-lang="text/x-python"><div class="CodeMirror-code"><div class="CodeMirror-line"><div class="CodeMirror-linenumber">1</div><pre><span class="cm-variable">In</span> [<span class="cm-number">1</span>]: <span class="cm-string">'\u0041'</span></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">2</div><pre><span class="cm-variable">Out</span>[<span class="cm-number">1</span>]: <span class="cm-string">'A'</span></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">3</div><pre></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">4</div><pre><span class="cm-variable">In</span> [<span class="cm-number">2</span>]: <span class="cm-keyword">print</span>(<span class="cm-string">'\u0041'</span>)</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">5</div><pre><span class="cm-variable">A</span></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">6</div><pre></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">7</div><pre><span class="cm-variable">In</span> [<span class="cm-number">3</span>]: <span class="cm-variable">message</span> = <span class="cm-string">'un mot et une rune \u16a0'</span></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">8</div><pre></pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">9</div><pre><span class="cm-variable">In</span> [<span class="cm-number">4</span>]: <span class="cm-keyword">print</span>(<span class="cm-variable">message</span>)</pre></div><div class="CodeMirror-line"><div class="CodeMirror-linenumber">10</div><pre><span class="cm-variable">un</span> <span class="cm-variable">mot</span> <span class="cm-variable">et</span> <span class="cm-variable">une</span> <span class="cm-variable">rune</span> <span class="cm-error">ᚠ</span></pre></div></div></div></div><pre class="code-raw noIndex " style="display:none;">In [1]: '\u0041'
+Out[1]: 'A'
+
+In [2]: print('\u0041')
+A
+
+In [3]: message = 'un mot et une rune \u16a0'
+
+In [4]: print(message)
+un mot et une rune ᚠ</pre></div></div></div></div></div></div></div></div></div></div></div></div></div><div id="tplFooter"><hr class="hidden"><a id="footer" class="accessAnc" name="footer" href="#footer"></a><a href="#" onclick="window.print();return false;" class="printSubWinBtn" title="Imprimer la page"><span><img alt="Imprimer" src="../skin/img/btn/printSubWin.png" onmouseover="this.src='../skin/img/btn/printSubWinOver.png';" onmouseout="this.src='../skin/img/btn/printSubWin.png';" class="btnImg"><span class="btnLbl">Imprimer</span></span></a></div></div>
+  <script type="text/JavaScript" src="../skin/js/skin.js"></script>
+  <script type="text/javascript">tplMgr.init();scCodeMgr.init();scImgMgr.init();new scSiRuleAutoMarginW("tplCoMarginW","ide:tplCo",true,450,100);new scSiRuleFlexH("tplCoFlexTop","ide:tplCo",true,.3);</script>
+ </body>
+</html>
