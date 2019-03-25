@@ -36,25 +36,17 @@ def pgcd():
             p = i
     return p
 
-def f(n):
-    a=['x']
-    for u in range(1,n+1):
-        a.append(u)
-    print(a)
-    b = a
-    for i in range(1,n+1):
-        b[0]=i
-        for y in range(1,n+1):
-            b[y]=a[y]*a[i]
-        print(b)
-
-def divs(n):
-    a = [1]
-    for i in range (2,n//2):
-        if (n%i==0):
-            a.append(i)
-    a.append(n)
-    print(a)
+t = 0
+for i in range(1,10000):
+    d = 0
+    for j in range(1,20):
+        import random as rd
+        p = rd.randint(0,1)
+        if (p==0):
+            d+=1
+    if (d==10):
+        t+=1
+print("fréquence :",t/10000)
 
 
 #print('pgcd =',pgcd())

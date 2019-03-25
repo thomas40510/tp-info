@@ -1,10 +1,12 @@
 import random
 def pswd(n):
-    a='azertyuiopqsdfghjklmwxcvbn0123456789'
+    a='azertyuiopqsdfghjklmwxcvbn0123456789AZERTYUIOPQSDFGHJKLMWXCVBN'
 
     pswd = ""
     for i in range(n):
-        pswd+=a[random.randint(0,len(a))]
-    return pswd
+        pswd+=a[random.randint(0,len(a)-1)]
+    print(pswd)
 
-print(pswd(8))
+
+for k in range(5):
+    pswd(15)
