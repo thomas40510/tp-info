@@ -42,4 +42,3 @@ mabase.commit()
 
 #~Pour finir, on ferme la base de données:
 mabase.close()
-

@@ -11,6 +11,7 @@ def shakespeare(n):
     for i in range(n):
         c = rd.randrange(26)
         l.append(alpha[c])
+    print(t.join(l))
     return(t.join(l))
     #return (l.count(t))
 def search(word):
@@ -23,7 +24,8 @@ def search(word):
         i+=1
     print(i*10000)
     print(a)
-#print(shakespeare(1000000).count("hello"))
+
+#print(shakespeare(1000000).count("hamlet"))
 
 def pgcd():
     a,b = 0,0
@@ -36,17 +38,14 @@ def pgcd():
             p = i
     return p
 
-t = 0
-for i in range(1,10000):
-    d = 0
-    for j in range(1,20):
-        import random as rd
-        p = rd.randint(0,1)
-        if (p==0):
-            d+=1
-    if (d==10):
-        t+=1
-print("fréquence :",t/10000)
+L=[]
+l=[]
+for i in range(30):
+    n=60//i
+    if 60%i==0:
+        L.append(n)
+        l.append(i)
+print(L,l)
 
 
 #print('pgcd =',pgcd())
