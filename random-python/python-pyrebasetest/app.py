@@ -21,6 +21,7 @@ global db
 db = firebase.database()
 db.generate_key()
 
+
 @app.route('/', methods=['GET', 'POST'])
 def basic():
     unsuccessful = 'Please check your credentials'
@@ -33,7 +34,7 @@ def basic():
             # user = auth.sign_in_with_email_and_password(email, password)
             global token
             token = user['idToken']
-            #return getdata(user['idToken'], successful)
+            # return getdata(user['idToken'], successful)
             return getdata(token, successful)
         except:
             return render_template('new.html', us=unsuccessful)
@@ -54,17 +55,18 @@ def getdata(token, msg):
     print(lsttostr(l))
     return render_template('new.html', dblist=l, s=msg)
 
+
 def getinfos(user):
     ref = db.child("cavaliers").child(user)
     gotinfo = ref.get(token)
     print(gotinfo)
     s = ""
-    lst=[]
+    lst = []
     for i in gotinfo.each():
         print(type(i.val()))
         if type(i.val()) == str:
-            print("valeur : "+i.val())
-            lst.append(i.key() +" : "+ i.val())
+            print("valeur : " + i.val())
+            lst.append(i.key() + " : " + i.val())
             print(lst)
     s = lsttostr(lst)
     return (s)
