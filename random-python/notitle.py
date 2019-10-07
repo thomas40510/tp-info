@@ -1,7 +1,4 @@
 import random as rd
-import numpy as np
-import time
-import sys
 
 alpha='azertyuiopqsdfghjklmwxcvbn'
 
@@ -38,14 +35,15 @@ def pgcd():
             p = i
     return p
 
-L=[]
-l=[]
-for i in range(30):
-    n=60//i
-    if 60%i==0:
-        L.append(n)
-        l.append(i)
-print(L,l)
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.keys()
+
+print(x)
 
 
 #print('pgcd =',pgcd())
