@@ -1,7 +1,0 @@
-numpy
-zerorpc
-gunicorn
-pyrebase
-firebase-admin
-flask
-matplotlib
