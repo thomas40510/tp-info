@@ -28,7 +28,7 @@ def search(word):
     print(a)
 
 
-# print(shakespeare(1000000).count("hamlet"))
+#print(shakespeare(1000000).count("hamlet"))
 
 def pgcd():
     a, b = 0, 0
@@ -40,6 +40,8 @@ def pgcd():
         if a % i == 0 and b % i == 0:
             p = i
     return p
+
+
 
 
 # print('pgcd =',pgcd())
