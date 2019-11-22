@@ -41,6 +41,17 @@ def pgcd():
             p = i
     return p
 
+x = [i for i in range(-5,19)]
+y = [-0.3*k**2-4*k+10 for k in x]
+
+plt.title('titre')
+plt.plot(x,y,'ro:', ms=4, label='courbe')
+plt.xlabel('labelx')
+plt.ylabel("ylabel")
+plt.axis('equal')
+plt.grid()
+plt.show()
+
 
 
 
