@@ -41,17 +41,22 @@ def pgcd():
             p = i
     return p
 
-x = [i for i in range(-5,19)]
-y = [-0.3*k**2-4*k+10 for k in x]
+I0 = 10
+l1 = 589.6
+l2 = 589
+s1 = 1/l1
+s2 = 1/l2
+s0 = (s1+s2)/2
+ds = s2-s1
+dp = 2*np.pi
 
-plt.title('titre')
-plt.plot(x,y,'ro:', ms=4, label='courbe')
-plt.xlabel('labelx')
-plt.ylabel("ylabel")
-plt.axis('equal')
-plt.grid()
+def I(x):
+    return 4*I0*(1+np.cos(dp*np.rad2deg(x)*s0)*np.cos(dp*np.rad2deg(x)*0.5*ds))
+x = np.linspace(-10000,10000,100000)
+plt.plot(x,I(x))
+plt.plot(x,4*I0*(1+np.cos(dp*np.rad2deg(x)*ds/2)))
+#plt.plot(x,4*I0*np.cos(dp*x*s0)+4*I0)
 plt.show()
-
 
 
 
