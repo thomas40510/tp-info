@@ -1,7 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rc
-from math import pi
+import numpy as np
 
 t_exp = [i for i in range(50)]
 kla=2
@@ -39,10 +37,11 @@ def Ir(x):
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif')
 
-plt.plot(x,Ir(x))
-plt.xlabel(r'\Large{$x$ (m)}')
-plt.ylabel(r'\Large{$I_r (4{E_0}^2)$}')
-plt.show()
+def plotI():
+    plt.plot(x,Ir(x))
+    plt.xlabel(r'\Large{$x$ (m)}')
+    plt.ylabel(r'\Large{$I_r (4{E_0}^2)$}')
+    plt.show()
 
 def m(x):
     s = 0
@@ -61,8 +60,35 @@ def incert(x):
     u = 2*sigma(x)/pow(len(x),0.5)
     return (str(m(x))+" +/- "+str(u))
 
+I0 = 5
+I = I0*(1+np.cos(2*np.pi*(a*x)/(D*lbda)))
+
+# plt.plot(x,I)
+# plt.xlabel(r'\Large{$x$ (m)}')
+# plt.ylabel(r'\Large{$I$}')
+# plt.show()
+
 # x = [65,66,61,62,61,63,59,65,60,63]
 # print(len(x))
 # print(sigma(x))
 #
 # print(incert(x))
+def tableau(x_max, N, P) :
+    T = np.zeros((N, P)) # initialisation du tableau
+    X = np.linspace(0, x_max, P) # valeurs de x
+    b = 0.2e-3 # valeur de b
+    Y =2 + np.cos(2*np.pi*X)+ np.cos(2*np.pi*(X+b)) # ligne des valeurs de y
+    for i in range(0, N) : T[i] = Y # remplissage avec des lignes identiques
+    return T
+N, P = 1000, 1000 # dimensions du tableau de valeurs
+x_max = 10 # trac´e sur [0, x max[
+plt.matshow(tableau(x_max, N, P),
+cmap=plt.cm.gray, vmin = 0, vmax = 4)
+# plt.cm.gray est la palette de couleurs en niveau de gris
+# plt.cm.gray r donne la mˆeme en n´egatif
+# vmin et vmax permettent de choisir les valeurs extrˆemes
+plt.colorbar(shrink=0.7)
+# affichage optionnel de l’´echelle de correspondance
+# shrink permet de r´egler la taille de la barre
+#plt.axis("off") # ne pas afficher les axes de coordonn´ees
+plt.show()
