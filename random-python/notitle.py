@@ -1,6 +1,4 @@
 import random as rd
-import numpy as np
-import matplotlib.pyplot as plt
 
 alpha = 'azertyuiopqsdfghjklmwxcvbn'
 
@@ -41,22 +39,6 @@ def pgcd():
             p = i
     return p
 
-I0 = 10
-l1 = 589.6
-l2 = 589
-s1 = 1/l1
-s2 = 1/l2
-s0 = (s1+s2)/2
-ds = s2-s1
-dp = 2*np.pi
-
-def I(x):
-    return 4*I0*(1+np.cos(dp*np.rad2deg(x)*s0)*np.cos(dp*np.rad2deg(x)*0.5*ds))
-x = np.linspace(-10000,10000,100000)
-plt.plot(x,I(x))
-plt.plot(x,4*I0*(1+np.cos(dp*np.rad2deg(x)*ds/2)))
-#plt.plot(x,4*I0*np.cos(dp*x*s0)+4*I0)
-plt.show()
 
 
 
