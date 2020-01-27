@@ -19,9 +19,9 @@ import numpy as np
 ## Definition des fonctions
 ############################
 
-def schema_explicite(T0, ItMax =2000, Dt = 0.05, \
-e = 7e-3, Lambda = 0.192, Rho = 960, c = 2180, \
-T_int = 310, T_ext = 283, epsilon = 1e-2):
+def schema_explicite(T0, ItMax =2000, Dt = 0.05,
+                     e = 7e-3, Lambda = 0.192, Rho = 960, c = 2180,
+                     T_int = 310, T_ext = 283, epsilon = 1e-2):
     '''renvoie le nombre d'iterations effectuees et une matrice de N + 2 lignes contenant les temperatures a l'instant k en chaque point declare de la paroi, par la methode des differences finies en utilisant un schéma explicite.'''
 # Question (i)
     Alpha = Rho * c / Lambda
@@ -67,14 +67,15 @@ T_int = 310, T_ext = 283, epsilon = 1e-2):
 ## Il est fortement recommandé de tester vos fonctions avant de les utiliser
 ###############################
 
+
 def calc_norme(V):
     '''renvoie la norme 2 du vecteur V de type array. La norme 2 vaut
  sqr ( somme (i de 1 à N) Vi^2 ).'''
     norme = 0
     for n in V:
-        norme += n
+        norme += pow(n,2)
     print(norme)
-    return pow(abs(norme), 0.5)
+    return pow(norme, 0.5)
 
 
 def CalcTkp1 (M, d) :
@@ -92,15 +93,13 @@ Le vecteur u renvoye est aussi un vecteur colonne de type array.'''
     u[0, 0] = (d[0, 0]/M[0, 0]) - (M[0, 1]/M[0, 0]) * u[1, 0]
     return u
 
-
-
-
 ## Corrigé du code de la partie 1 du DM : INUTILE pour la partie 2
 ###############################
 
-def schema_implicite(T0, ItMax =2000, Dt = 0.05, e = 7e-3, \
-Lambda = 0.192, Rho = 960, c = 2180, T_int = 310, T_ext = 283, \
-epsilon = 1e-2):
+
+def schema_implicite(T0, ItMax =2000, Dt = 0.05, e = 7e-3,
+                     Lambda = 0.192, Rho = 960, c = 2180, T_int = 310, T_ext = 283,
+                     epsilon = 1e-2):
     '''renvoie le nombre d'iterations effectuees et une matrice de N + 2 lignes
 contenant les temperatures a l'instant k en chaque point declare de la paroi,
 par la methode des differences finies en utilisant un schéma implicite.'''
@@ -321,7 +320,7 @@ def courbe_conducto_convection():
         plt.plot(x, T_tous_k[:, 100*i], label = 't = '+str(i*5)+'s')
     plt.xlabel('distance $x$')
     plt.ylabel('Température')
-    plt.legend()
+    #plt.legend()
     plt.title('Profils de température $-$ cas de la conducto-convection')
     plt.show()
 
@@ -332,7 +331,7 @@ def courbe_rayonnement():
         plt.plot(x, T_tous_k[:, 100*i], label = 't = '+str(i*5)+'s')
     plt.xlabel('distance $x$')
     plt.ylabel('Température')
-    plt.legend()
+    #plt.legend()
     plt.title('Profils de température $-$ cas du rayonnement')
     plt.show()
 
